@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+  
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer" >
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //按钮单击时执行
+        $("#testAjax").click(function(){
+              //取Ajax返回结果
+              //为了简单，这里简单地从文件中读取内容作为返回数据
+              //alert("zzc")
+              htmlobj=$.ajax({
+              	             url:"http://127.0.0.1/qq?sName=600030",
+                             //url:"http://api.money.126.net/data/feed/0601398",
+                             dataType:"json",
+    												 type:"get",
+                             jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+                             success: function(data) {
+                             	  // obj=htmlobj.responseText;
+                             	// obj1=JSON.stringify(data);
+                             	// var jstr=JSON.parse(obj1);
+                             	 //obj1 = obj1.substr(1,obj1.length-2);
+                             	 // data = JSON.parse(data);
+                             	alert(data.business.Stock[0].name);
+                             //	 alert(data.bussiness.Stock[0].name);
+                             	 // json1 = eval("("+data+")"); 
+												     		//	alert(obj1.bussiness.Stock[0].name);  
+                                
+                             },
+                             
+                             error:function(XMLHttpRequest, textStatus, errorThrown) {
+													       alert(XMLHttpRequest.status);
+													       alert(XMLHttpRequest.readyState);
+													         alert(textStatus);
+													       alert(errorThrown);
+													       alert(data);
+                             }, 
+                              async:false});
+                              
+//                        $.getJSON("http://127.0.0.1:9000/q?sName=600030",function(data){  
+//              							alert("getJSON");
+//                           });   
+                              
+                              
+               //显示Ajax返回结果
+               
+               $("#myDiv").html(htmlobj.responseText);
+         });
+    });
+    
+    
+   
+</script>    
+</head>
+    <body>
+        <div id="myDiv"><h2>通过 AJAX 改变文本</h2></div>
+        <button id="testAjax" type="button">Ajax改变内容</button>
+    </body>
+</html>
