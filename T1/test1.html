@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+  
+<html>
+<head>
+	<meta charset="UTF-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style type="text/css">
+			#list {
+				/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+				margin-top: -1px;
+			}
+		</style>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+ $(function(){	
+	 $("#testAjax").keyup(function(){
+        	    var reg= /^[A-Za-z0-9]+$/;
+       	      var reg1=/^[0-9]+$/;
+       	      
+        	    //var reg2=/^(([a-z]+[0-9]+)|([0-9]+[a-z]+))[a-z0-9]*$/;
+       	     // alert(reg1.test(this.value));  
+             // alert(reg.test(this.value));
+              if(reg.test(this.value)==false)
+              {
+              	alert(this.value); 
+              	alert("is not number  alse not zimu"); 
+              	
+              }
+             
+        });
+        
+ });
+</script>
+</head>
+<body>
+		<div class="mui-content">
+<input id="testAjax" name="input1" style="position: relative;"></input>
+</body>
+
+</html>
+
+        
