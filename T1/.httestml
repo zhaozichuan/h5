@@ -46,8 +46,10 @@
                               
                               
                //显示Ajax返回结果
-               
-               $("#myDiv").html(htmlobj.responseText);
+               //var htmlobj="<ul><li>"+data.business.Stock[0].name+"</li><li></li></ul>";
+               //alert(_proto)
+                $("#myDiv").html(htmlobj.responseText);
+              //$("#myDiv").html(htmlobj);
          });
     });
     
